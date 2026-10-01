@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catch Uncle Dags!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="arcade-shell">
+    <div class="topbar">
+      <div class="brand">CATCH UNCLE DAGS!</div>
+      <div class="top-controls">
+        <button id="musicBtn" class="mini-btn">♫ MUSIC</button>
+        <button id="pauseBtn" class="mini-btn">Ⅱ PAUSE</button>
+      </div>
+    </div>
+
+    <section class="game-frame">
+      <div class="hud">
+        <div class="hud-box">
+          <span class="label">SCORE</span>
+          <span id="score">000000</span>
+        </div>
+        <div class="hud-box center">
+          <span class="label">COMBO</span>
+          <span id="combo">x0</span>
+        </div>
+        <div class="hud-box right">
+          <span class="label">LIVES</span>
+          <span id="lives">♥ ♥ ♥</span>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="320" height="180"></canvas>
+        <div id="toast" class="toast"></div>
+
+        <div id="startScreen" class="overlay">
+          <div class="panel title-panel">
+            <div class="pixel-star">✦</div>
+            <h1>CATCH<br><span>UNCLE DAGS!</span></h1>
+            <p class="subtitle">THE MOST IMPORTANT JOB IN DOHA</p>
+            <button id="playBtn" class="big-btn">▶ PLAY</button>
+            <p class="hint">← → MOVE &nbsp; • &nbsp; CATCH THE DAGS</p>
+            <p class="high-score">HIGH SCORE <span id="menuHighScore">000000</span></p>
+          </div>
+        </div>
+
+        <div id="pauseScreen" class="overlay hidden">
+          <div class="panel">
+            <h2>PAUSED</h2>
+            <button id="resumeBtn" class="big-btn">▶ RESUME</button>
+            <button id="restartBtnPause" class="secondary-btn">↻ RESTART</button>
+            <button id="settingsBtn" class="secondary-btn">⚙ SETTINGS</button>
+          </div>
+        </div>
+
+        <div id="gameOverScreen" class="overlay hidden">
+          <div class="panel">
+            <p class="eyebrow">RUN COMPLETE</p>
+            <h2>GAME OVER</h2>
+            <p class="final-label">FINAL SCORE</p>
+            <div id="finalScore" class="final-score">000000</div>
+            <div id="newHigh" class="new-high hidden">★ NEW HIGH SCORE ★</div>
+            <button id="restartBtn" class="big-btn">↻ PLAY AGAIN</button>
+            <button id="menuBtn" class="secondary-btn">⌂ MAIN MENU</button>
+          </div>
+        </div>
+
+        <div id="settingsScreen" class="overlay hidden">
+          <div class="panel settings-panel">
+            <h2>SETTINGS</h2>
+            <label class="setting-row">
+              <span>SCREEN SHAKE</span>
+              <input id="shakeToggle" type="checkbox" checked>
+            </label>
+            <label class="setting-row">
+              <span>PIXEL EFFECT</span>
+              <input id="pixelToggle" type="checkbox" checked>
+            </label>
+            <label class="setting-row">
+              <span>MUSIC</span>
+              <input id="musicToggle" type="checkbox" checked>
+            </label>
+            <button id="settingsBackBtn" class="secondary-btn">← BACK</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-hint">
+      <span>HEV ABI</span>
+      <span>•</span>
+      <span>DON'T LET THE DAGS HIT THE FLOOR</span>
+      <span>•</span>
+      <span id="levelText">LEVEL 1</span>
+    </div>
+  </main>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="catchSound" preload="auto">
+    <source src="assets/catch.wav" type="audio/wav">
+  </audio>
+  <audio id="missSound" preload="auto">
+    <source src="assets/miss.wav" type="audio/wav">
+  </audio>
+
+  <script src="game.js"></script>
+</body>
+</html>
