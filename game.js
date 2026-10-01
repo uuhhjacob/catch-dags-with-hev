@@ -40,7 +40,7 @@ const player = {
   y: H - 31,
   w: 24,
   h: 26,
-  speed: 230
+  speed: 300
 };
 
 const dags = [];
