@@ -28,7 +28,7 @@ let lastTime = 0;
 let spawnTimer = 0;
 let score = 0;
 let combo = 0;
-let lives = 3;
+let lives = 10;
 let level = 1;
 let shake = 0;
 let musicOn = true;
@@ -96,7 +96,7 @@ function formatScore(n) {
 function resetGame() {
   score = 0;
   combo = 0;
-  lives = 3;
+  lives = 10;
   level = 1;
   spawnTimer = 0;
   shake = 0;
